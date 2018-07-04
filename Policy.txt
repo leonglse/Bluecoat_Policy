@@ -1,0 +1,2136 @@
+; Optimized Policy Executable -- compiled at: Wed, 04 Jul 2018 02:44:58 UTC
+;     Default proxy policy is ALLOW
+
+<Proxy@always> [builtin-prolog:654]
+    variable.false_flag(false) 
+
+<Proxy@always> [builtin-prolog:664]
+    variable.volume_quota_enforced(false) 
+
+<Proxy@client-id> [builtin-prolog:660]
+    variable.time_quota_enforced(false) 
+
+<Proxy@client-id> [vpm-cpl:1610]
+    condition=__CondList1CombinedDestination_Store_payment client.address=StoresCashiers 
+    url.host.regex="kaspersky.com" client.address=Store_Users 
+    condition=__CondList1RequestURLCategory_AdminShop client.address=CombinedSource_AdminShop 
+    client.address=10.196.57.13 
+    client.address=172.16.5.252-172.16.5.253 
+    client.address=CombinedSource_Meeting_Room_IP 
+    condition=__USER9 
+    condition=__USER47 url.host.regex="kjt.com" 
+    condition=__USER3 
+    condition=__USER92 category=Block_websites 
+    condition=__CondList1Bluecoat_Enable_QQ category=Tencent 
+    condition=__GROUP17 
+    condition="__CondList1Bluecoat_StoreManager&VIP" category=(Common_sites, Shopping, Store_URL, Business/Economy, "Chat (IM)/SMS", "Content Servers", Education, Email, "File Storage/Sharing", "Financial Services", Government/Legal, "Job Search/Careers", News/Media, Newsgroups/Forums, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", "Software Downloads", Technology/Internet, Translation, Travel) 
+    condition=__GROUP26 category="Remote Access Tools" 
+    condition=__GROUP73 category="File Storage/Sharing" 
+    condition=__GROUP40 category=(Fanli, Shopping, Auctions, "Software Downloads") 
+    condition=__GROUP23 category=Restaurants/Dining/Food 
+    condition=__GROUP69 condition=__CondList1CombinedDestination_Aliwangwang 
+    condition=__GROUP25 category="Real Estate" 
+    condition=__GROUP41 condition=__CondList1CombinedDestination_iask_Blog 
+    condition=__GROUP93 condition="__CondList1Taobao website" 
+    condition=__GROUP10 condition=__CondList1CombinedDestination_Job_serach 
+    condition="__CondList1IT department" category=(Allow_Hotline, Tencent, Business/Economy, "Chat (IM)/SMS", Education, News/Media, Newsgroups/Forums, "Office/Business Applications", "Personal Sites", "Remote Access Tools", "Software Downloads") 
+    category=(Allow_Hotline, Tencent, Business/Economy, "Chat (IM)/SMS", Education, News/Media, Newsgroups/Forums, "Office/Business Applications", "Personal Sites", "Remote Access Tools", "Software Downloads") client.address=10.196.19.232 
+    client.address=Store_Users 
+    client.address=10.196.62.0/24 
+    category=(BlackList, "Remote Access Tools") client.address=ALL_Users 
+    category=(Common_sites, Brokerage/Trading, Business/Economy, "Content Servers", Education, Email, "Financial Services", Government/Legal, News/Media, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", Technology/Internet, Translation, Travel) client.address=ALL_Users 
+    category=("Blocked URL", "Audio/Video Clips", "Child Pornography", "File Storage/Sharing", Gambling, Phishing, Pornography, "Sex Education", "Sexual Expression", Suspicious, "TV/Video Streams") client.address=ALL_Users 
+    category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=WIFI 
+    client.address=WIFI 
+    category=Tencent client.address=ALL_Users 
+    category=(Shopping, Abortion, "Adult/Mature Content", Alcohol, "Alternative Spirituality/Belief", Art/Culture, Auctions, "Audio/Video Clips", Brokerage/Trading, Business/Economy, "Charitable Organizations", "Child Pornography", "Controlled Substances", "Dynamic DNS Host", E-Card/Invitations, Education, Entertainment, Extreme, "File Storage/Sharing", "Financial Services", "For Kids", Gambling, Games, Hacking, Health, Humor/Jokes, Informational, "Internet Connected Devices", "Intimate Apparel/Swimsuit", "Job Search/Careers", "Malicious Outbound Data/Botnets", "Malicious Sources/Malnets", Marijuana, "Media Sharing", Military, "Mixed Content/Potentially Adult", News/Media, Newsgroups/Forums, Nudity, "Peer-to-Peer (P2P)", "Personal Sites", Personals/Dating, Phishing, "Piracy/Copyright Concerns", Placeholders, "Political/Social Advocacy", Pornography, "Potentially Unwanted Software", "Proxy Avoidance", "Radio/Audio Streams", "Real Estate", Religion, Restaurants/Dining/Food, Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", "Social Networking", "Society/Daily Living", "Software Downloads", Spam, Sports/Recreation, Tobacco, "TV/Video Streams", Vehicles, Violence/Hate/Racism, Weapons, "Web Ads/Analytics", "Web Hosting") client.address=ALL_Users time=1830..2359 
+    condition="__CondList1Company local network" client.address=ALL_Users 
+    condition="__CondList1CombinedDestination_Official Website" client.address=ALL_Users 
+    condition="__CondList1IT department" condition=__CondList1ShunFeng_Express 
+    condition=__CondList1ShenZheng_Taobao_2Hours condition="__CondList1Taobao website" time=0900..1800 variable.time_quota_enforced(true) variable.time_quota_name(TimeQuota_2hours) variable.time_quota_frequency(daily) variable.time_quota_limit(120) variable.time_quota_warning_limit(90) 
+    condition="__CondList1Taobao website" client.address="CombinedSource_SHO Avalor_No_auction_shopping" time=1100..1500 variable.time_quota_enforced(true) variable.time_quota_name(TimeQuota_45min) variable.time_quota_frequency(daily) variable.time_quota_limit(45) variable.time_quota_warning_limit(33) 
+    category=(Fanli, Shopping, Auctions, "Software Downloads") client.address="CombinedSource_SHO Avalor_No_auction_shopping" time=0900..1800 
+    category=(Shopping, Art/Culture, Auctions, "Charitable Organizations", "Controlled Substances", E-Card/Invitations, Education, "For Kids", Health, Informational, "Media Sharing", Military, News/Media, Newsgroups/Forums, "Office/Business Applications", Religion, Restaurants/Dining/Food, "Social Networking", "Society/Daily Living", Sports/Recreation, Vehicles, "Web Hosting") client.address=ALL_Users time=1100..1500 variable.time_quota_enforced(true) variable.time_quota_name(TimeQuota_45min) variable.time_quota_frequency(daily) variable.time_quota_limit(45) variable.time_quota_warning_limit(33) 
+
+<Proxy@client-id> [builtin-epilog:9]
+    variable.time_quota_enforced=true policy.quota_aux_initialization@client-id 
+    variable.volume_quota_enforced=true policy.quota_aux_initialization@client-id 
+
+<Proxy@client-id> [builtin-epilog:17]  variable.time_quota_enforced=true 
+    condition=_user_is_unknown t_procedure.check_guest_time_recorded 
+    t_procedure.check_time_recorded 
+
+<Proxy@client-id> [builtin-epilog:21]  variable.time_quota_enforced=true 
+    condition=_user_is_unknown t_procedure.check_guest_time_quota t_procedure.check_guest_time_quota_warning 
+    t_procedure.check_time_quota t_procedure.check_time_quota_warning 
+
+<Proxy@client-id> [builtin-epilog:25]  variable.time_quota_enforced=true 
+    condition=_user_is_unknown variable.guest_time_quota_exceeded=false variable.guest_time_recorded=false t_procedure.set_guest_time_recorded t_procedure.update_guest_time_quota 
+    variable.time_quota_exceeded=false variable.time_recorded=false t_procedure.set_time_recorded t_procedure.update_time_quota 
+
+<Proxy@client-id> [builtin-epilog:34]  variable.time_quota_enforced=true 
+  [Rule]  condition=!_user_is_unknown variable.time_quota_warning=true 
+    variable.time_quota_warning_exists=true 
+    t_procedure.update_time_quota_warning 
+
+<Proxy@client-id> [builtin-epilog:39]  variable.time_quota_enforced=true 
+  [Rule]  condition=_user_is_unknown variable.guest_time_quota_warning=true 
+    variable.guest_time_quota_warning_exists=true 
+    t_procedure.update_guest_time_quota_warning 
+
+<Proxy@client-id> [builtin-epilog:52]  variable.volume_quota_enforced=true 
+    condition=_user_is_unknown t_procedure.check_guest_volume_quota t_procedure.check_guest_volume_quota_warning 
+    t_procedure.check_volume_quota t_procedure.check_volume_quota_warning 
+
+<Proxy@client-id> [builtin-epilog:66]  variable.volume_quota_enforced=true 
+  [Rule]  condition=!_user_is_unknown variable.volume_quota_warning=true 
+    variable.volume_quota_warning_exists=true 
+    t_procedure.update_volume_quota_warning 
+
+<Proxy@client-id> [builtin-epilog:71]  variable.volume_quota_enforced=true 
+  [Rule]  condition=_user_is_unknown variable.guest_volume_quota_warning=true 
+    variable.guest_volume_quota_warning_exists=true 
+    t_procedure.update_guest_volume_quota_warning 
+
+<Exception@term> [builtin-prolog:246]
+    t_procedure.dashboard_blocked_stats_infinity 
+
+<Exception@req-all> [builtin-prolog:237]
+    t_procedure.dashboard_record_hourly 
+
+<Exception@req-all> [builtin-prolog:240]
+    t_procedure.dashboard_record_daily 
+
+<Exception@req-all> [builtin-prolog:243]
+    t_procedure.dashboard_record_monthly 
+
+<Proxy@final> [builtin-epilog:56]  variable.volume_quota_enforced=true 
+  [Rule]  http.response.code=200 
+    condition=_user_is_unknown variable.guest_volume_quota_exceeded=false t_procedure.update_guest_volume_quota 
+    variable.volume_quota_exceeded=false t_procedure.update_volume_quota 
+
+<Proxy>
+    variable.false_flag=true authenticate(no) 
+
+<Proxy>
+    condition=__CondList1RequestURLCategory_AdminShop client.address=CombinedSource_AdminShop authenticate(no) 
+    url.host.regex="kaspersky.com" client.address=Store_Users authenticate(no) 
+    condition=__CondList1CombinedDestination_Store_payment client.address=StoresCashiers authenticate(no) 
+    client.address=10.196.57.13 authenticate(no) 
+    condition="__CondList1Pre Authentication Website" client.address=10.0.0.0/8 authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+    url.host.regex="ua-webdav.smua.local" authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+    client.address=10.196.35.73 authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.13.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.14.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.15.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.63.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.45.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.47.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.23.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.39.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.51.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.53.0/24 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=10.196.54.0/24 
+    client.address=172.16.5.252-172.16.5.253 authenticate(no) 
+    client.address=Store_Users authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+    condition=__CondList1CombinedDestination_SppedUP_Website client.address=10.0.0.0/8 authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+    client.address=WIFI authenticate(no) 
+    category=("Blocked URL", "Audio/Video Clips", "Child Pornography", "File Storage/Sharing", Gambling, Phishing, Pornography, "Sex Education", "Sexual Expression", Suspicious, "TV/Video Streams") client.address=10.196.59.0/24 authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+    client.address=10.196.19.232 authenticate(no) 
+    client.address=10.196.59.0/24 authenticate(no) 
+    category=(Common_sites, Brokerage/Trading, Business/Economy, "Content Servers", Education, Email, "Financial Services", Government/Legal, News/Media, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", Technology/Internet, Translation, Travel) client.address=10.0.0.0/8 authenticate(no) 
+    client.address=10.0.0.0/8 authenticate(windows_sso_realms) authenticate.force(no) authenticate.mode(form-ip) 
+
+<Proxy>
+    ALLOW condition=__CondList1CombinedDestination_Store_payment client.address=StoresCashiers 
+    ALLOW url.host.regex="kaspersky.com" client.address=Store_Users 
+    ALLOW condition=__CondList1RequestURLCategory_AdminShop client.address=CombinedSource_AdminShop 
+    ALLOW client.address=10.196.57.13 
+    ALLOW client.address=172.16.5.252-172.16.5.253 
+    ALLOW client.address=CombinedSource_Meeting_Room_IP 
+    ALLOW condition=__USER9 
+    ALLOW condition=__USER47 url.host.regex="kjt.com" 
+    ALLOW condition=__USER3 
+    DENY condition=__USER92 category=Block_websites 
+    ALLOW condition=__CondList1Bluecoat_Enable_QQ category=Tencent 
+    ALLOW condition=__GROUP17 
+    ALLOW condition="__CondList1Bluecoat_StoreManager&VIP" category=(Common_sites, Shopping, Store_URL, Business/Economy, "Chat (IM)/SMS", "Content Servers", Education, Email, "File Storage/Sharing", "Financial Services", Government/Legal, "Job Search/Careers", News/Media, Newsgroups/Forums, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", "Software Downloads", Technology/Internet, Translation, Travel) 
+    ALLOW condition=__GROUP26 category="Remote Access Tools" 
+    ALLOW condition=__GROUP73 category="File Storage/Sharing" 
+    ALLOW condition=__GROUP40 category=(Fanli, Shopping, Auctions, "Software Downloads") 
+    ALLOW condition=__GROUP23 category=Restaurants/Dining/Food 
+    ALLOW condition=__GROUP69 condition=__CondList1CombinedDestination_Aliwangwang 
+    ALLOW condition=__GROUP25 category="Real Estate" 
+    ALLOW condition=__GROUP41 condition=__CondList1CombinedDestination_iask_Blog 
+    ALLOW condition=__GROUP93 condition="__CondList1Taobao website" 
+    ALLOW condition=__GROUP10 condition=__CondList1CombinedDestination_Job_serach 
+    ALLOW condition="__CondList1IT department" category=(Allow_Hotline, Tencent, Business/Economy, "Chat (IM)/SMS", Education, News/Media, Newsgroups/Forums, "Office/Business Applications", "Personal Sites", "Remote Access Tools", "Software Downloads") 
+    ALLOW category=(Allow_Hotline, Tencent, Business/Economy, "Chat (IM)/SMS", Education, News/Media, Newsgroups/Forums, "Office/Business Applications", "Personal Sites", "Remote Access Tools", "Software Downloads") client.address=10.196.19.232 
+    DENY client.address=Store_Users 
+    ALLOW client.address=10.196.62.0/24 
+    DENY category=(BlackList, "Remote Access Tools") client.address=ALL_Users 
+    ALLOW category=(Common_sites, Brokerage/Trading, Business/Economy, "Content Servers", Education, Email, "Financial Services", Government/Legal, News/Media, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", Technology/Internet, Translation, Travel) client.address=ALL_Users 
+    DENY category=("Blocked URL", "Audio/Video Clips", "Child Pornography", "File Storage/Sharing", Gambling, Phishing, Pornography, "Sex Education", "Sexual Expression", Suspicious, "TV/Video Streams") client.address=ALL_Users 
+    DENY category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") client.address=WIFI 
+    ALLOW client.address=WIFI 
+    DENY category=Tencent client.address=ALL_Users 
+    ALLOW category=(Shopping, Abortion, "Adult/Mature Content", Alcohol, "Alternative Spirituality/Belief", Art/Culture, Auctions, "Audio/Video Clips", Brokerage/Trading, Business/Economy, "Charitable Organizations", "Child Pornography", "Controlled Substances", "Dynamic DNS Host", E-Card/Invitations, Education, Entertainment, Extreme, "File Storage/Sharing", "Financial Services", "For Kids", Gambling, Games, Hacking, Health, Humor/Jokes, Informational, "Internet Connected Devices", "Intimate Apparel/Swimsuit", "Job Search/Careers", "Malicious Outbound Data/Botnets", "Malicious Sources/Malnets", Marijuana, "Media Sharing", Military, "Mixed Content/Potentially Adult", News/Media, Newsgroups/Forums, Nudity, "Peer-to-Peer (P2P)", "Personal Sites", Personals/Dating, Phishing, "Piracy/Copyright Concerns", Placeholders, "Political/Social Advocacy", Pornography, "Potentially Unwanted Software", "Proxy Avoidance", "Radio/Audio Streams", "Real Estate", Religion, Restaurants/Dining/Food, Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", "Social Networking", "Society/Daily Living", "Software Downloads", Spam, Sports/Recreation, Tobacco, "TV/Video Streams", Vehicles, Violence/Hate/Racism, Weapons, "Web Ads/Analytics", "Web Hosting") client.address=ALL_Users time=1830..2359 
+    ALLOW condition="__CondList1Company local network" client.address=ALL_Users 
+    ALLOW condition="__CondList1CombinedDestination_Official Website" client.address=ALL_Users 
+    ALLOW condition="__CondList1IT department" condition=__CondList1ShunFeng_Express 
+    ALLOW condition=__CondList1ShenZheng_Taobao_2Hours condition="__CondList1Taobao website" time=0900..1800 
+    ALLOW condition="__CondList1Taobao website" client.address="CombinedSource_SHO Avalor_No_auction_shopping" time=1100..1500 
+    DENY category=(Fanli, Shopping, Auctions, "Software Downloads") client.address="CombinedSource_SHO Avalor_No_auction_shopping" time=0900..1800 
+    ALLOW category=(Shopping, Art/Culture, Auctions, "Charitable Organizations", "Controlled Substances", E-Card/Invitations, Education, "For Kids", Health, Informational, "Media Sharing", Military, News/Media, Newsgroups/Forums, "Office/Business Applications", Religion, Restaurants/Dining/Food, "Social Networking", "Society/Daily Living", Sports/Recreation, Vehicles, "Web Hosting") client.address=ALL_Users time=1100..1500 
+    DENY condition=__USER202 
+    DENY category=(Shopping, Abortion, "Adult/Mature Content", Alcohol, "Alternative Spirituality/Belief", Art/Culture, Auctions, "Audio/Video Clips", Brokerage/Trading, Business/Economy, "Charitable Organizations", "Child Pornography", "Controlled Substances", "Dynamic DNS Host", E-Card/Invitations, Education, Entertainment, Extreme, "File Storage/Sharing", "Financial Services", "For Kids", Gambling, Games, Hacking, Health, Humor/Jokes, Informational, "Internet Connected Devices", "Intimate Apparel/Swimsuit", "Job Search/Careers", "Malicious Outbound Data/Botnets", "Malicious Sources/Malnets", Marijuana, "Media Sharing", Military, "Mixed Content/Potentially Adult", News/Media, Newsgroups/Forums, Nudity, "Peer-to-Peer (P2P)", "Personal Sites", Personals/Dating, Phishing, "Piracy/Copyright Concerns", Placeholders, "Political/Social Advocacy", Pornography, "Potentially Unwanted Software", "Proxy Avoidance", "Radio/Audio Streams", "Real Estate", Religion, Restaurants/Dining/Food, Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", "Social Networking", "Society/Daily Living", "Software Downloads", Spam, Sports/Recreation, Tobacco, "TV/Video Streams", Vehicles, Violence/Hate/Racism, Weapons, "Web Ads/Analytics", "Web Hosting") client.address=ALL_Users 
+
+<Forward>
+    server_url.host.regex="ua-webdav.smua.local" client.address=CombinedSource_FICE_Office forward("Proxy") forward.fail_open(yes) 
+    server_url.host.regex="google.com" client.address=CombinedSource_FICE_Office forward("Proxy", "Google") forward.fail_open(yes) 
+    condition=__HostPort91_FORWARD_ forward("Sportmaster") forward.fail_open(yes) 
+    condition=__CondList1CombinedDestination_Google_FORWARD_ client.address=CombinedSource_FICE_Office forward("Proxy") forward.fail_open(yes) 
+    server_url.category=Speedup forward("Proxy") forward.fail_open(yes) 
+
+<Proxy>
+    ALLOW url.domain=//msftncsi.com/ authenticate(no) 
+
+<ssl>
+    server_url.host=intranet.company.com 
+    server.certificate.validate.ignore.untrusted-issuer(yes) 
+
+<Proxy>  variable.time_quota_enforced=true 
+    condition=_user_is_unknown variable.guest_time_quota_exceeded=false 
+    condition=!_user_is_unknown variable.time_quota_exceeded=false 
+    force_exception(policy_time_quota_exceeded) 
+
+<Proxy>  variable.time_quota_enforced=true 
+  [Rule]  condition=!_user_is_unknown variable.time_quota_warning=true 
+    variable.time_quota_warning_exists=true 
+    exception(policy_time_quota_warning) 
+
+<Proxy>  variable.time_quota_enforced=true 
+  [Rule]  condition=_user_is_unknown variable.guest_time_quota_warning=true 
+    variable.guest_time_quota_warning_exists=true 
+    exception(policy_time_quota_warning) 
+
+<Proxy>  variable.volume_quota_enforced=true 
+    condition=_user_is_unknown variable.guest_volume_quota_exceeded=false 
+    condition=!_user_is_unknown variable.volume_quota_exceeded=false 
+    force_exception(policy_volume_quota_exceeded) 
+
+<Proxy>  variable.volume_quota_enforced=true 
+  [Rule]  condition=!_user_is_unknown variable.volume_quota_warning=true 
+    variable.volume_quota_warning_exists=true 
+    exception(policy_volume_quota_warning) 
+
+<Proxy>  variable.volume_quota_enforced=true 
+  [Rule]  condition=_user_is_unknown variable.guest_volume_quota_warning=true 
+    variable.guest_volume_quota_warning_exists=true 
+    exception(policy_volume_quota_warning) 
+
+define variable integer dns.request.threat_risk.effective_level
+
+define variable integer url.threat_risk.effective_level
+
+define variable integer request.header.Referer.url.threat_risk.effective_level
+
+define variable integer server_url.threat_risk.effective_level
+
+define variable integer server.certificate.hostname.threat_risk.effective_level
+
+define variable string bc_notify1
+
+define variable string bc_notify2
+
+define variable boolean time_quota_enforced
+
+define variable string time_quota_name
+
+define variable string time_quota_frequency
+
+define variable integer time_quota_limit
+
+define variable integer time_quota_warning_limit
+
+define variable boolean time_quota_exceeded
+
+define variable boolean time_quota_warning
+
+define variable boolean time_quota_warning_exists
+
+define variable boolean guest_time_quota_exceeded
+
+define variable boolean guest_time_quota_warning
+
+define variable boolean guest_time_quota_warning_exists
+
+define variable boolean time_recorded
+
+define variable boolean guest_time_recorded
+
+define variable boolean volume_quota_enforced
+
+define variable string volume_quota_name
+
+define variable string volume_quota_frequency
+
+define variable integer volume_quota_limit
+
+define variable integer volume_quota_warning_limit
+
+define variable boolean volume_quota_exceeded
+
+define variable boolean volume_quota_warning
+
+define variable boolean volume_quota_warning_exists
+
+define variable boolean guest_volume_quota_exceeded
+
+define variable boolean guest_volume_quota_warning
+
+define variable boolean guest_volume_quota_warning_exists
+
+define variable boolean user_authentication_is_on
+
+define variable boolean false_flag
+
+define t_procedure@req-all dashboard_record_hourly
+<layer>
+ state.map.policy.dashboard_blocked_stats_hourly{url.host}{exception.id}.increment(1)
+end
+
+define t_procedure@req-all dashboard_record_daily
+<layer>
+ state.map.policy.dashboard_blocked_stats_daily{url.host}{exception.id}.increment(1)
+end
+
+define t_procedure@term dashboard_blocked_stats_infinity
+<layer>
+ state.map.policy.dashboard_blocked_stats_infinity{exception.id}.increment(1)
+end
+
+define t_procedure@req-all dashboard_record_monthly
+<layer>
+ state.map.policy.dashboard_blocked_stats_monthly{url.host}{exception.id}.increment(1)
+end
+
+define t_procedure@client-id check_time_recorded
+<layer>
+ variable.time_recorded.set(state.map.policy.time_user_record{user}{variable.time_quota_name}.exists())
+end
+
+define t_procedure@client-id check_guest_time_recorded
+<layer>
+ variable.guest_time_recorded.set(state.map.policy.time_guest_record{client.address}{variable.time_quota_name}.exists())
+end
+
+define t_procedure@client-id set_time_recorded
+<layer>
+ state.map.policy.time_user_record{user}{variable.time_quota_name}.touch()
+end
+
+define t_procedure@client-id set_guest_time_recorded
+<layer>
+ state.map.policy.time_guest_record{client.address}{variable.time_quota_name}.touch()
+end
+
+define t_procedure@client-id check_time_quota
+<layer>
+ variable.time_quota_frequency=weekly variable.time_quota_exceeded.set(state.map.policy.weekly_user_time_quota{user}{variable.time_quota_name}.value_larger_than(variable.time_quota_limit))
+ variable.time_quota_frequency=daily variable.time_quota_exceeded.set(state.map.policy.daily_user_time_quota{user}{variable.time_quota_name}.value_larger_than(variable.time_quota_limit))
+ variable.time_quota_exceeded.set(state.map.policy.hourly_user_time_quota{user}{variable.time_quota_name}.value_larger_than(variable.time_quota_limit))
+end
+
+define t_procedure@client-id check_guest_time_quota
+<layer>
+ variable.time_quota_frequency=weekly variable.guest_time_quota_exceeded.set(state.map.policy.weekly_guest_time_quota{client.address}{variable.time_quota_name}.value_larger_than(variable.time_quota_limit))
+ variable.time_quota_frequency=daily variable.guest_time_quota_exceeded.set(state.map.policy.daily_guest_time_quota{client.address}{variable.time_quota_name}.value_larger_than(variable.time_quota_limit))
+ variable.guest_time_quota_exceeded.set(state.map.policy.hourly_guest_time_quota{client.address}{variable.time_quota_name}.value_larger_than(variable.time_quota_limit))
+end
+
+define t_procedure@client-id update_time_quota
+<layer>
+ variable.time_quota_frequency=weekly state.map.policy.weekly_user_time_quota{user}{variable.time_quota_name}.increment(1)
+ variable.time_quota_frequency=daily state.map.policy.daily_user_time_quota{user}{variable.time_quota_name}.increment(1)
+ state.map.policy.hourly_user_time_quota{user}{variable.time_quota_name}.increment(1)
+end
+
+define t_procedure@client-id update_guest_time_quota
+<layer>
+ variable.time_quota_frequency=weekly state.map.policy.weekly_guest_time_quota{client.address}{variable.time_quota_name}.increment(1)
+ variable.time_quota_frequency=daily state.map.policy.daily_guest_time_quota{client.address}{variable.time_quota_name}.increment(1)
+ state.map.policy.hourly_guest_time_quota{client.address}{variable.time_quota_name}.increment(1)
+end
+
+define t_procedure@client-id check_time_quota_warning
+<layer>
+ variable.time_quota_frequency=weekly variable.time_quota_warning.set(state.map.policy.weekly_user_time_quota{user}{variable.time_quota_name}.value_larger_than(variable.time_quota_warning_limit)) variable.time_quota_warning_exists.set(state.map.policy.weekly_user_time_quota_warning_record{user}{variable.time_quota_name}.exists())
+ variable.time_quota_frequency=daily variable.time_quota_warning.set(state.map.policy.daily_user_time_quota{user}{variable.time_quota_name}.value_larger_than(variable.time_quota_warning_limit)) variable.time_quota_warning_exists.set(state.map.policy.daily_user_time_quota_warning_record{user}{variable.time_quota_name}.exists())
+ variable.time_quota_warning.set(state.map.policy.hourly_user_time_quota{user}{variable.time_quota_name}.value_larger_than(variable.time_quota_warning_limit)) variable.time_quota_warning_exists.set(state.map.policy.hourly_user_time_quota_warning_record{user}{variable.time_quota_name}.exists())
+end
+
+define t_procedure@client-id check_guest_time_quota_warning
+<layer>
+ variable.time_quota_frequency=weekly variable.guest_time_quota_warning.set(state.map.policy.weekly_guest_time_quota{client.address}{variable.time_quota_name}.value_larger_than(variable.time_quota_warning_limit)) variable.guest_time_quota_warning_exists.set(state.map.policy.weekly_guest_time_quota_warning_record{client.address}{variable.time_quota_name}.exists())
+ variable.time_quota_frequency=daily variable.guest_time_quota_warning.set(state.map.policy.daily_guest_time_quota{client.address}{variable.time_quota_name}.value_larger_than(variable.time_quota_warning_limit)) variable.guest_time_quota_warning_exists.set(state.map.policy.daily_guest_time_quota_warning_record{client.address}{variable.time_quota_name}.exists())
+ variable.guest_time_quota_warning.set(state.map.policy.hourly_guest_time_quota{client.address}{variable.time_quota_name}.value_larger_than(variable.time_quota_warning_limit)) variable.guest_time_quota_warning_exists.set(state.map.policy.hourly_guest_time_quota_warning_record{client.address}{variable.time_quota_name}.exists())
+end
+
+define t_procedure@client-id update_time_quota_warning
+<layer>
+ variable.time_quota_frequency=weekly state.map.policy.weekly_user_time_quota_warning_record{user}{variable.time_quota_name}.touch()
+ variable.time_quota_frequency=daily state.map.policy.daily_user_time_quota_warning_record{user}{variable.time_quota_name}.touch()
+ state.map.policy.hourly_user_time_quota_warning_record{user}{variable.time_quota_name}.touch()
+end
+
+define t_procedure@client-id update_guest_time_quota_warning
+<layer>
+ variable.time_quota_frequency=weekly state.map.policy.weekly_guest_time_quota_warning_record{client.address}{variable.time_quota_name}.touch()
+ variable.time_quota_frequency=daily state.map.policy.daily_guest_time_quota_warning_record{client.address}{variable.time_quota_name}.touch()
+ state.map.policy.hourly_guest_time_quota_warning_record{client.address}{variable.time_quota_name}.touch()
+end
+
+define t_procedure@client-id check_volume_quota
+<layer>
+ variable.volume_quota_frequency=weekly variable.volume_quota_exceeded.set(state.map.policy.weekly_user_volume_quota{user}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_limit))
+ variable.volume_quota_frequency=daily variable.volume_quota_exceeded.set(state.map.policy.daily_user_volume_quota{user}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_limit))
+ variable.volume_quota_exceeded.set(state.map.policy.hourly_user_volume_quota{user}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_limit))
+end
+
+define t_procedure@client-id check_guest_volume_quota
+<layer>
+ variable.volume_quota_frequency=weekly variable.guest_volume_quota_exceeded.set(state.map.policy.weekly_guest_volume_quota{client.address}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_limit))
+ variable.volume_quota_frequency=daily variable.guest_volume_quota_exceeded.set(state.map.policy.daily_guest_volume_quota{client.address}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_limit))
+ variable.guest_volume_quota_exceeded.set(state.map.policy.hourly_guest_volume_quota{client.address}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_limit))
+end
+
+define t_procedure@final update_volume_quota
+<layer>
+ variable.volume_quota_frequency=weekly state.map.policy.weekly_user_volume_quota{user}{variable.volume_quota_name}.increment(sc-bytes)
+ variable.volume_quota_frequency=daily state.map.policy.daily_user_volume_quota{user}{variable.volume_quota_name}.increment(sc-bytes)
+ state.map.policy.hourly_user_volume_quota{user}{variable.volume_quota_name}.increment(sc-bytes)
+end
+
+define t_procedure@final update_guest_volume_quota
+<layer>
+ variable.volume_quota_frequency=weekly state.map.policy.weekly_guest_volume_quota{client.address}{variable.volume_quota_name}.increment(sc-bytes)
+ variable.volume_quota_frequency=daily state.map.policy.daily_guest_volume_quota{client.address}{variable.volume_quota_name}.increment(sc-bytes)
+ state.map.policy.hourly_guest_volume_quota{client.address}{variable.volume_quota_name}.increment(sc-bytes)
+end
+
+define t_procedure@client-id check_volume_quota_warning
+<layer>
+ variable.volume_quota_frequency=weekly variable.volume_quota_warning.set(state.map.policy.weekly_user_volume_quota{user}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_warning_limit)) variable.volume_quota_warning_exists.set(state.map.policy.weekly_user_volume_quota_warning_record{user}{variable.volume_quota_name}.exists())
+ variable.volume_quota_frequency=daily variable.volume_quota_warning.set(state.map.policy.daily_user_volume_quota{user}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_warning_limit)) variable.volume_quota_warning_exists.set(state.map.policy.daily_user_volume_quota_warning_record{user}{variable.volume_quota_name}.exists())
+ variable.volume_quota_warning.set(state.map.policy.hourly_user_volume_quota{user}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_warning_limit)) variable.volume_quota_warning_exists.set(state.map.policy.hourly_user_volume_quota_warning_record{user}{variable.volume_quota_name}.exists())
+end
+
+define t_procedure@client-id check_guest_volume_quota_warning
+<layer>
+ variable.volume_quota_frequency=weekly variable.guest_volume_quota_warning.set(state.map.policy.weekly_guest_volume_quota{client.address}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_warning_limit)) variable.guest_volume_quota_warning_exists.set(state.map.policy.weekly_guest_volume_quota_warning_record{client.address}{variable.volume_quota_name}.exists())
+ variable.volume_quota_frequency=daily variable.guest_volume_quota_warning.set(state.map.policy.daily_guest_volume_quota{client.address}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_warning_limit)) variable.guest_volume_quota_warning_exists.set(state.map.policy.daily_guest_volume_quota_warning_record{client.address}{variable.volume_quota_name}.exists())
+ variable.guest_volume_quota_warning.set(state.map.policy.hourly_guest_volume_quota{client.address}{variable.volume_quota_name}.value_larger_than(variable.volume_quota_warning_limit)) variable.guest_volume_quota_warning_exists.set(state.map.policy.hourly_guest_volume_quota_warning_record{client.address}{variable.volume_quota_name}.exists())
+end
+
+define t_procedure@client-id update_volume_quota_warning
+<layer>
+ variable.volume_quota_frequency=weekly state.map.policy.weekly_user_volume_quota_warning_record{user}{variable.volume_quota_name}.touch()
+ variable.volume_quota_frequency=daily state.map.policy.daily_user_volume_quota_warning_record{user}{variable.volume_quota_name}.touch()
+ state.map.policy.hourly_user_volume_quota_warning_record{user}{variable.volume_quota_name}.touch()
+end
+
+define t_procedure@client-id update_guest_volume_quota_warning
+<layer>
+ variable.volume_quota_frequency=weekly state.map.policy.weekly_guest_volume_quota_warning_record{client.address}{variable.volume_quota_name}.touch()
+ variable.volume_quota_frequency=daily state.map.policy.daily_guest_volume_quota_warning_record{client.address}{variable.volume_quota_name}.touch()
+ state.map.policy.hourly_guest_volume_quota_warning_record{client.address}{variable.volume_quota_name}.touch()
+end
+
+define condition __HostPort111
+    url.host.regex="sptmr.ru" 
+end
+
+define condition __HostPort142
+    url.host.regex="firebaseio.com" 
+end
+
+define condition __HostPort119
+    url.port=80..443 url.host.regex="webinputsystem.com" 
+end
+
+define condition __HostPort92
+    url.host.regex="sportmaster.ru" 
+end
+
+define condition __HostPort108
+    url.host.regex="kaspersky.com" 
+end
+
+define condition __HostPort139
+    url.host.regex="virtuallyghetto.com" 
+end
+
+define condition __HostPort110
+    url.host.regex="aeroflot.ru" 
+end
+
+define condition __HostPort118
+    url.host.regex="vtb.com" 
+end
+
+define condition __HostPort141
+    url.host.regex="vietnamworks.com" 
+end
+
+define condition __HostPort120
+    url.port=80..443 url.host=wosign.com 
+end
+
+define condition __HostPort128
+    url.host.regex="hpe.com" 
+end
+
+define condition __HostPort138
+    url.host.regex="wikipedia.org" 
+end
+
+define condition __HostPort127
+    url.host.regex="wsj.com" 
+end
+
+define condition __HostPort147
+    url.host.regex="wsj.net" 
+end
+
+define condition __HostPort115
+    url.host.regex="scarabresearch.com" 
+end
+
+define condition __HostPort113
+    url.host.regex="ostin.cn" 
+end
+
+define condition __HostPort112
+    url.host.regex="ostin.com" 
+end
+
+define condition __CondList1CombinedDestination_SppedUP_Website
+    condition=__HostPort119 
+    condition=__HostPort120 
+    url.host.regex="sportmaster.ru" 
+    url.host.regex="sptmr.ru" 
+    url.host.regex="ostin.com" 
+    url.host.regex="ostin.cn" 
+    url.host.regex="scarabresearch.com" 
+    url.host.regex="wsj.com" 
+    url.host.regex="hpe.com" 
+    url.host.regex="wikipedia.org" 
+    url.host.regex="virtuallyghetto.com" 
+    url.host.regex="vietnamworks.com" 
+    url.host.regex="firebaseio.com" 
+    url.host.regex="vtb.com" 
+    url.host.regex="aeroflot.ru" 
+    url.host.regex="wsj.net" 
+    url.host.regex="kaspersky.com" 
+end
+
+define condition CombinedDestination_SppedUP_Website
+    condition=__CondList1CombinedDestination_SppedUP_Website 
+end
+
+define condition __GROUP40
+    realm=windows_sso_realms group="CN=Bluecoat_Enable_Shopping,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_Shopping
+    condition=__GROUP40 
+end
+
+define condition __HostPort35
+    url.host=218.17.224.174 
+end
+
+define condition __HostPort75
+    url.port=8080 url.host.substring=bsp-download.sf-express.com 
+end
+
+define condition RequestURL_SF_EXPRESS
+    url.host.regex="sf-express.com" 
+end
+
+define condition __CondList1ShunFeng_Express
+    condition=__HostPort75 
+    url.host.regex="sf-express.com" 
+    url.host=218.17.224.174 
+end
+
+define condition ShunFeng_Express
+    condition=__CondList1ShunFeng_Express 
+end
+
+define condition "Hotline Addon Cat"
+    category=(Allow_Hotline, Tencent, Business/Economy, "Chat (IM)/SMS", Education, News/Media, Newsgroups/Forums, "Office/Business Applications", "Personal Sites", "Remote Access Tools", "Software Downloads") 
+end
+
+define condition __CondList1HotlineOnly
+    condition="Hotline Addon Cat" 
+end
+
+define condition HotlineOnly
+    condition=__CondList1HotlineOnly 
+end
+
+define condition __GROUP25
+    realm=windows_sso_realms group="CN=Bluecoat_Allow_RealEstate,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_RealEstate
+    condition=__GROUP25 
+end
+
+define condition Bluecoat_Allow_RealEstate
+    condition=__CondList1Bluecoat_Allow_RealEstate 
+end
+
+define condition __HostPort93
+    url.host.regex="51jobcdn.com" 
+end
+
+define condition RequestURLCategory_JobSearch
+    category="Job Search/Careers" 
+end
+
+define condition __CondList1CombinedDestination_Job_serach
+    category="Job Search/Careers" 
+    url.host.regex="51jobcdn.com" 
+end
+
+define condition CombinedDestination_Job_serach
+    condition=__CondList1CombinedDestination_Job_serach 
+end
+
+define condition "Regex ostin"
+    url.host.regex="ostin.com" 
+end
+
+define condition RequestURL_sportmaster.ru
+    url.host.regex="sportmaster.ru" 
+end
+
+define condition Request_GKSM
+    url.host.regex="gksm.local" 
+end
+
+define condition __HostPort57
+    url.host.regex="o-stin.cn" 
+end
+
+define condition "__CondList1CombinedDestination_Official Website"
+    url.regex="sportmaster.cn" 
+    url.regex="yonyou.com" 
+    url.regex="ufida.com.cn" 
+    url.regex="bestpay.com.cn" 
+    url.host.regex="ostin.com" 
+    url.host.regex="sportmaster.ru" 
+    url.host.regex="gksm.local" 
+    url.host.regex="o-stin.cn" 
+end
+
+define condition "CombinedDestination_Official Website"
+    condition="__CondList1CombinedDestination_Official Website" 
+end
+
+define condition __GROUP23
+    realm=windows_sso_realms group="CN=Bluecoat_allow_Restaurant,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_Restaurant
+    condition=__GROUP23 
+end
+
+define condition __USER92
+    realm=windows_sso_realms user=SPORTMASTER\martin.zhang 
+end
+
+define condition __GROUP276
+    realm=windows_sso_realms group="CN=Bluecoat_enable_QQ,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __GROUP6
+    realm=windows_sso_realms group="CN=ERP_group,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __GROUP8
+    realm=windows_sso_realms group="CN=Hotline,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Enable_QQ
+    condition=__GROUP8 
+    condition=__GROUP6 
+    condition=__USER92 
+    condition=__GROUP276 
+    client.address=10.196.11.0/24 
+    client.address=10.196.6.0/24 
+end
+
+define condition __HostPort80
+    url.host.regex="iask.sina.com.cn" 
+end
+
+define condition __HostPort81
+    url.host.regex="blog.sina.com.cn" 
+end
+
+define condition __CondList1CombinedDestination_iask_Blog
+    url.host.regex="iask.sina.com.cn" 
+    url.host.regex="blog.sina.com.cn" 
+end
+
+define condition __GROUP43
+    realm=windows_sso_realms group="CN=SM_storemanagers,OU=Groups,OU=Shops,DC=sportmaster,DC=local" 
+end
+
+define condition __GROUP42
+    realm=windows_sso_realms group="CN=Ostin_storemanagers,OU=Groups,OU=Shops,DC=sportmaster,DC=local" 
+end
+
+define condition __GROUP20
+    realm=windows_sso_realms group="CN=Bluecoat_StoreVIP,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition "__CondList1Bluecoat_StoreManager&VIP"
+    condition=__GROUP20 
+    condition=__GROUP42 
+    condition=__GROUP43 
+end
+
+define condition __HostPort98
+    url.host.regex="alicdn.com" 
+end
+
+define condition __HostPort99
+    url.host.regex="tmall.com" 
+end
+
+define condition RequestURLCategory_Content_Servers
+    category="Content Servers" 
+end
+
+define condition __HostPort79
+    url.host.regex="tbcdn.cn" 
+end
+
+define condition RequestURL_Taobao
+    url.host.regex="taobao.com" 
+end
+
+define condition "__CondList1Taobao website"
+    category="Content Servers" 
+    url.host.regex="taobao.com" 
+    url.host.regex="tmall.com" 
+    url.host.regex="tbcdn.cn" 
+    url.host.regex="alicdn.com" 
+end
+
+define condition __GROUP17
+    realm=windows_sso_realms group="CN=Bluecoat_VIP,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_VIP
+    condition=__GROUP17 
+end
+
+define condition RequestURLCategory_QQ
+    category=Tencent 
+end
+
+define condition __CondList1QQ
+    condition=RequestURLCategory_QQ 
+end
+
+define condition QQ
+    condition=__CondList1QQ 
+end
+
+define condition __HostPort148
+    url.host.regex="kjt.com" 
+end
+
+define condition __CondList1CombinedDestination_KJT.com
+    condition=__HostPort148 
+end
+
+define condition CombinedDestination_KJT.com
+    condition=__CondList1CombinedDestination_KJT.com 
+end
+
+define condition __HostPort132
+    url.host.regex="96005656.com" 
+end
+
+define condition __HostPort129
+    url.host.regex="wenku.baidu.com" 
+end
+
+define condition __HostPort131
+    url.host.regex="51fanli.net" 
+end
+
+define condition __HostPort130
+    url.host.regex="boc.cn" 
+end
+
+define condition __HostPort21
+    url.host.regex="facebook.com" 
+end
+
+define condition __HostPort76
+    url.host.regex="messenger.com" 
+end
+
+define condition __HostPort78
+    url.host.regex="gstatic.com" 
+end
+
+define condition __HostPort24
+    url.host.regex="googleusercontent.com" 
+end
+
+define condition __HostPort25
+    url.host.regex="google.com" 
+end
+
+define condition __HostPort82
+    url.host.regex="docin.com" 
+end
+
+define condition __HostPort26
+    url.host.regex="fbcdn.net" 
+end
+
+define condition __HostPort56
+    url.host.regex="googleapis.com" 
+end
+
+define condition __HostPort144
+    url.host.regex="10086.cn" 
+end
+
+define condition __HostPort30
+    url.host=www.google.com 
+end
+
+define condition __HostPort31
+    url.host.regex="google.ru" 
+end
+
+define condition "__CondList1Pre Authentication Website"
+    url.host.regex="wsj.net" 
+    url.host.regex="google.com" 
+    url.host.regex="google.ru" 
+    url.host.regex="messenger.com" 
+    url.host.regex="gstatic.com" 
+    url.host.regex="googleapis.com" 
+    url.host.regex="googleusercontent.com" 
+    url.host.regex="fbcdn.net" 
+    url.host.regex="facebook.com" 
+    url.host.regex="sportmaster.ru" 
+    url.host.regex="docin.com" 
+    url.host.regex="wsj.com" 
+    url.host.regex="wenku.baidu.com" 
+    url.host.regex="boc.cn" 
+    url.host.regex="51fanli.net" 
+    url.host.regex="96005656.com" 
+    url.host.regex="10086.cn" 
+    url.host.regex="vtb.com" 
+    url.host=www.google.com 
+end
+
+define condition "Pre Authentication Website"
+    condition="__CondList1Pre Authentication Website" 
+end
+
+define condition __HostPort47
+    url.host=175.102.13.39 
+end
+
+define condition "__CondList1Company local network"
+    url.host=175.102.13.39 
+    url.address=10.0.0.0/8 
+    url.address=172.0.0.0/8 
+    url.address=192.168.0.0/16 
+end
+
+define condition "Company local network"
+    condition="__CondList1Company local network" 
+end
+
+define condition RequestURLCategory_SHOP_TAX
+    category=(TAX, "Financial Services", Government/Legal) 
+end
+
+define condition RequestURLCategory_Translation
+    category=Translation_policy 
+end
+
+define condition __CondList1RequestURLCategory_AdminShop
+    category=Translation_policy 
+    category=(TAX, "Financial Services", Government/Legal) 
+end
+
+define condition RequestURLCategory_AdminShop
+    condition=__CondList1RequestURLCategory_AdminShop 
+end
+
+define condition __HostPort90
+    url.host.regex="alisoft.com" 
+end
+
+define condition __HostPort89
+    url.host.regex="wangwang.taobao.com" 
+end
+
+define condition __CondList1CombinedDestination_Aliwangwang
+    url.host.regex="alicdn.com" 
+    url.host.regex="wangwang.taobao.com" 
+    url.host.regex="alisoft.com" 
+end
+
+define condition Bluecoat_Allow_Shopping
+    condition=__CondList1Bluecoat_Allow_Shopping 
+end
+
+define condition __USER43
+    realm=windows_sso_realms user=SPORTMASTER\Bluecoat_Enable_Shopping 
+end
+
+define condition __USER16
+    realm=windows_sso_realms user=SPORTMASTER\elaine.liu 
+end
+
+define condition __CondList1ShenZheng_Taobao_2Hours
+    condition=__USER16 
+    condition=__USER43 
+end
+
+define condition ShenZheng_Taobao_2Hours
+    condition=__CondList1ShenZheng_Taobao_2Hours 
+end
+
+define condition RequestURLCategory_BlackList
+    category=(Shopping, Abortion, "Adult/Mature Content", Alcohol, "Alternative Spirituality/Belief", Art/Culture, Auctions, "Audio/Video Clips", Brokerage/Trading, Business/Economy, "Charitable Organizations", "Child Pornography", "Controlled Substances", "Dynamic DNS Host", E-Card/Invitations, Education, Entertainment, Extreme, "File Storage/Sharing", "Financial Services", "For Kids", Gambling, Games, Hacking, Health, Humor/Jokes, Informational, "Internet Connected Devices", "Intimate Apparel/Swimsuit", "Job Search/Careers", "Malicious Outbound Data/Botnets", "Malicious Sources/Malnets", Marijuana, "Media Sharing", Military, "Mixed Content/Potentially Adult", News/Media, Newsgroups/Forums, Nudity, "Peer-to-Peer (P2P)", "Personal Sites", Personals/Dating, Phishing, "Piracy/Copyright Concerns", Placeholders, "Political/Social Advocacy", Pornography, "Potentially Unwanted Software", "Proxy Avoidance", "Radio/Audio Streams", "Real Estate", Religion, Restaurants/Dining/Food, Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", "Social Networking", "Society/Daily Living", "Software Downloads", Spam, Sports/Recreation, Tobacco, "TV/Video Streams", Vehicles, Violence/Hate/Racism, Weapons, "Web Ads/Analytics", "Web Hosting") 
+end
+
+define condition __CondList1CombinedDestination_BlackList
+    condition=RequestURLCategory_BlackList 
+end
+
+define condition CombinedDestination_BlackList
+    condition=__CondList1CombinedDestination_BlackList 
+end
+
+define condition RequestURLCategory_Financial_serv
+    category=(Payment4Store, "Content Servers", "Financial Services", Non-Viewable/Infrastructure) 
+end
+
+define condition __CondList1CombinedDestination_Store_payment
+    category=(Payment4Store, "Content Servers", "Financial Services", Non-Viewable/Infrastructure) 
+    url.address=110.75.0.0/16 
+    url.address=110.76.0.0/16 
+end
+
+define condition CombinedDestination_Store_payment
+    condition=__CondList1CombinedDestination_Store_payment 
+end
+
+define condition __HostPort78_FORWARD_
+    server_url.host.regex="gstatic.com" 
+end
+
+define condition __HostPort24_FORWARD_
+    server_url.host.regex="googleusercontent.com" 
+end
+
+define condition __HostPort25_FORWARD_
+    server_url.host.regex="google.com" 
+end
+
+define condition __HostPort56_FORWARD_
+    server_url.host.regex="googleapis.com" 
+end
+
+define condition __HostPort31_FORWARD_
+    server_url.host.regex="google.ru" 
+end
+
+define condition __CondList1CombinedDestination_Google_FORWARD_
+    server_url.host.regex="google.com" 
+    server_url.host.regex="googleusercontent.com" 
+    server_url.host.regex="googleapis.com" 
+    server_url.host.regex="google.ru" 
+    server_url.host.regex="gstatic.com" 
+end
+
+define condition CombinedDestination_Google_FORWARD_
+    condition=__CondList1CombinedDestination_Google_FORWARD_ 
+end
+
+define condition __GROUP73
+    realm=windows_sso_realms group="CN=Bluecoat_Enable_FileSharing,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_FileSharing
+    condition=__GROUP73 
+end
+
+define condition "Bluecoat_StoreManager&VIP"
+    condition="__CondList1Bluecoat_StoreManager&VIP" 
+end
+
+define condition "Taobao website"
+    condition="__CondList1Taobao website" 
+end
+
+define condition __USER44
+    realm=bcaaa1 user=SPORTMASTER\RuilianSZO 
+end
+
+define condition "__CondList1IT department"
+    condition=__GROUP8 
+    condition=__GROUP6 
+    condition=__USER92 
+    condition=__USER44 
+end
+
+define condition __GROUP69
+    realm=windows_sso_realms group="CN=Bluecoat_allow_AlibabaWangwang,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_Alibabawangwang
+    condition=__GROUP69 
+end
+
+define condition Bluecoat_Allow_Alibabawangwang
+    condition=__CondList1Bluecoat_Allow_Alibabawangwang 
+end
+
+define condition __GROUP26
+    realm=windows_sso_realms group="CN=Bluecoat_allow_RemoteDesktop,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_RemoteControl
+    condition=__GROUP26 
+end
+
+define condition CombinedDestination_iask_Blog
+    condition=__CondList1CombinedDestination_iask_Blog 
+end
+
+define condition Bluecoat_Allow_FileSharing
+    condition=__CondList1Bluecoat_Allow_FileSharing 
+end
+
+define condition __GROUP93
+    realm=windows_sso_realms group="CN=Bluecoat_allow_Taobao,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_Taobao
+    condition=__GROUP93 
+end
+
+define condition Bluecoat_Allow_Taobao
+    condition=__CondList1Bluecoat_Allow_Taobao 
+end
+
+define condition Bluecoat_VIP
+    condition=__CondList1Bluecoat_VIP 
+end
+
+define condition __GROUP10
+    realm=windows_sso_realms group="CN=Bluecoat_allow_HR,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_HR_User
+    condition=__GROUP10 
+end
+
+define condition Bluecoat_Allow_HR_User
+    condition=__CondList1Bluecoat_Allow_HR_User 
+end
+
+define condition Bluecoat_Allow_Restaurant
+    condition=__CondList1Bluecoat_Allow_Restaurant 
+end
+
+define condition __GROUP41
+    realm=windows_sso_realms group="CN=Bluecoat_Enable_Social_Media,OU=Bluecoat,OU=Tech_groups,OU=Sportmaster,DC=sportmaster,DC=local" 
+end
+
+define condition __CondList1Bluecoat_Allow_Social_media
+    condition=__GROUP41 
+end
+
+define condition Bluecoat_Allow_Social_media
+    condition=__CondList1Bluecoat_Allow_Social_media 
+end
+
+define condition Bluecoat_Allow_RemoteControl
+    condition=__CondList1Bluecoat_Allow_RemoteControl 
+end
+
+define condition CombinedDestination_Aliwangwang
+    condition=__CondList1CombinedDestination_Aliwangwang 
+end
+
+define condition Bluecoat_Enable_QQ
+    condition=__CondList1Bluecoat_Enable_QQ 
+end
+
+define condition "IT department"
+    condition="__CondList1IT department" 
+end
+
+define subnet CombinedSource_AdminShop
+    10.193.4.11 10.193.6.139 10.193.4.139 10.193.7.139 
+    10.193.7.152 10.193.0.139 10.193.6.11 10.192.5.3 
+    10.193.7.153 
+end
+
+define subnet CombinedSource_FICE_Office
+    10.196.60.0/24 10.196.62.0/24 10.196.63.0/24 
+end
+
+define subnet StoresCashiers
+    10.196.60.199 10.192.2.203 10.193.4.139 10.193.7.11 
+    10.193.4.152 10.192.1.74 10.193.0.39 10.193.0.149 
+    10.192.0.137 10.193.3.21 10.192.1.195 10.193.0.24 
+    10.192.2.74 10.192.4.67 10.193.1.151 10.193.4.23 
+    10.193.6.139 10.193.2.153 10.192.2.3 10.193.6.152 
+    10.192.2.195 10.193.2.151 10.193.3.153 10.192.0.131 
+    10.193.7.139 10.193.7.152 10.192.0.75 10.192.1.202 
+    10.192.4.74 10.193.3.151 10.192.3.139 10.193.6.23 
+    10.192.2.204 10.193.4.153 10.193.0.29 10.193.0.139 
+    10.192.2.10 10.192.4.3 10.193.1.156 10.192.1.75 
+    10.193.3.11 10.192.2.92 10.193.4.28 10.193.0.152 
+    10.193.4.151 10.192.4.139 10.193.7.23 10.193.0.150 
+    10.192.2.131 10.193.3.22 10.192.5.3 10.193.1.139 
+    10.193.4.11 10.193.0.25 10.192.4.12 10.192.0.67 
+    10.193.1.150 10.193.6.153 10.192.3.131 10.193.4.22 
+    10.193.2.139 10.193.2.152 10.192.2.140 10.192.5.12 
+    10.193.6.151 10.192.4.131 10.193.7.153 10.196.60.175 
+    10.193.3.139 10.192.4.144 10.193.6.11 10.193.3.152 
+    10.193.6.24 10.192.2.67 
+end
+
+define subnet "CombinedSource_SHO Avalor_No_auction_shopping"
+    10.196.19.0/24 10.196.22.0/24 
+end
+
+define subnet WIFI
+    10.196.46.0/24 10.196.23.0/24 10.196.13.0/24 10.196.59.0/24 
+    10.196.54.0/24 10.196.39.0/24 10.196.62.0/24 10.196.47.0/24 
+    10.196.14.0/24 10.196.45.0/24 10.196.63.0/24 10.196.53.0/24 
+    10.196.15.0/24 10.196.51.0/24 
+end
+
+define subnet CombinedSource_Meeting_Room_IP
+    10.196.59.0/24 
+end
+
+define subnet Store_Users
+    10.192.0.0/16 10.193.0.0/16 
+end
+
+define subnet ALL_Users
+    10.0.0.0/8 
+end
+
+define Proxy policy quota_aux_initialization
+<Proxy@client-id> [builtin-prolog:633]
+    user=abc variable.user_authentication_is_on(true) 
+    user=!abc variable.user_authentication_is_on(true) 
+    variable.user_authentication_is_on(false) 
+
+<Proxy@client-id> [builtin-prolog:637]
+    variable.false_flag=true variable.time_quota_name(ignored) variable.time_quota_frequency(hourly) variable.time_quota_limit(0) variable.time_quota_warning_limit(0) 
+
+<Proxy@client-id> [builtin-prolog:640]
+    variable.false_flag=true variable.volume_quota_name(ignored) variable.volume_quota_frequency(hourly) variable.volume_quota_limit(0) variable.volume_quota_warning_limit(0) 
+end
+
+define category SSL
+    //regalhotel.com/  
+    //apple.com/  
+    //icloud.com/  
+    //baidu.com/  
+    //boc.cn/  
+    //co.ebsnew.boc.cn/  
+    //abchina.com/  
+    //vtb.com/  
+end
+
+define category "Blocked URL"
+    //videocdn.qq.com/  
+    //kuwo.cn/  
+    //tb-video.bdstatic.com/  
+    //pstatp.com/  
+    //yoka.com/  
+    //xunlei.com/  
+    //video.qq.com/  
+    //v.qq.com/  
+    //tiantian8.com/  
+    //cache.tv.qq.com/  
+    //iqiyi.com/  
+    //youku.com/  
+    //kankan.com/  
+    //biquge5200.com/  
+    //71.am/  
+    //wifi8.com/  
+    //k.com/  
+    //diyidan.net/  
+    //cntv.dnion.com/  
+    //cntv.wscdns.com/  
+end
+
+define category TEST
+    //comodoca4.com/  
+    //gtimg.com/  
+    //pay.weops.qq.com/  
+    //pay.wechat.com/  
+    //weixin.qq.com/  
+    //edgesuite.net/  
+    //akamai.net/  
+    //alipaydns.com/  
+    //alipay.com/  
+    //symcb.com/  
+end
+
+define category Alipay
+    //110.75.231.202/  
+    //110.75.244.16/  
+    //110.76.18.202/  
+    //110.75.244.202/  
+    //110.75.236.202/  
+end
+
+define category "Untrust SSL"
+    //boc.cn/  
+    //google.com/  
+    //google.ru/  
+    //vtb.ru/  
+    //wsj.com/  
+    //wsj.net/  
+end
+
+define category Block_websites
+    //ugcbsy.qq.com/  
+    //ugcws.video.gtimg.com/  
+    //ugcdl.video.gtimg.com/  
+    //ugclx.video.gtimg.com/  
+    //defaultts.tc.qq.com/  
+    //ugcsjy.qq.com/  
+    //ugcydzd.qq.com/  
+end
+
+define category Shopping
+    //taobao.com/  
+    //tmall.com/  
+    //alibaba.com/  
+end
+
+define category Fanli
+    //www.fanli.com/  
+    //51fanli.net/  
+end
+
+define category Common_sites
+    //avaya.com/  
+    //bluecoat.com/  
+    //10010.com/  
+    //microsoft.com/  
+    //youdao.com/  
+    //www.shpte.com/  
+    //wechat.o-stin.cn/  
+    //webinputsystem.com/  
+    //1688.com/  
+    //12306.cn/  
+    //wenku.baidu.com/  
+    //ctrip.com/  
+    //qunar.com/  
+    //dhl.com/  
+    //alibaba.com/  
+    //alicdn.com/  
+    //shmet.com/  
+    //100ppi.com/  
+    //blog.sina.com.cn/  
+    //mail.it-power.cn/  
+    //m2m.10646.cn/  
+    //ymq.ctsports.com.cn/  
+    //51zbz.com/  
+    //docin.com/  
+    //windeln.de/  
+    //fobshanghai.com/  
+    //fur.com.cn/  
+    //51pptmoban.com/  
+    //100ppi.com/  
+    //21food.cn/  
+    //colormunki.com/  
+    //xrite.com/  
+    //bzxz.net/  
+    //apple.com/  
+    //staples.cn/  
+    //webpowerchina.cn/  
+    //yonyou.com/  
+    //wmcvietnam.com/  
+    //instrument.com.cn/  
+    //xm-l-tax.gov.cn/  
+    //down.usdxz1.net/  
+    //sfscjk.com/  
+    //51recovery.com/  
+    //ey100.com/  
+    //chinaacc.com/  
+    //sportmaster.ru/  
+    //zhikunedu.com/  
+    //ctrip.com/  
+    //ctripbiz.com/  
+    //c-trip.com/  
+    //wooordhunt.ru/  
+    //nipic.com/  
+    //translatewrite.com/  
+    //qualitydigest.com/  
+    //mkt5989.com/  
+    //intertek.com.cn/  
+    //3conline.com/  
+    //kms.lotro.cc/  
+    //sz-fesco.com/  
+    //1tu.com/  
+    //shpte.com/  
+    //mp.weixin.qq.com/  
+    //100ppi.com/  
+    //ldoceonline.com/  
+    //creativehunt.com/  
+    //en.ytsports.cn/  
+    //hbr-russia.ru/  
+    //ckgsb.edu.cn/  
+    //daxueconsulting.com/  
+    //diva-portal.org/  
+    //gfk.com/  
+    //kantar.com/  
+    //87g.com/  
+    //mckinsey.com/  
+    //ukessays.com/  
+    //essencehr.com/  
+    //sithc.com/  
+    //everlaw.com.cn/  
+    //pay.weixin.qq.com/  
+    //knowledge.ckgsb.edu.cn/  
+    //mch.tenpay.com/  
+    //ostin.admin.dhteam.net/  
+    //hsbcnet.com/  
+    //fjkj100.com/  
+    //omtrdc.net/  
+    //rapidbbs.cn/  
+    //58.com/  
+    //nike.com/  
+    //yandex.ru/  
+    //upwork.com/  
+    //1qunwang.com/  
+    //signsandsymptomsoftranslation.com/  
+    //listbb.ru/  
+    //nat-geo.ru/  
+    //scubadiving.com/  
+    //scubaboard.com/  
+    //ostin.cn/  
+    //ostin.com/  
+    //sportmaster.ru/  
+    //sportmastercorp.com/  
+    //sportmaster.com/  
+    //sportmaster.cn/  
+    //icloud.com/  
+    //incake.net/  
+    //captcha.qq.com/  
+    //wx.gtimg.com/  
+    //kf.qq.com/  
+    //pay.weixin.qq.com/  
+    //winshang.com/  
+    //soupu.com/  
+    //1tu.cn/  
+    //sportmaster.ru/  
+    //sportmaster.cn/  
+    //yandex.ru/  
+    //mediatoday.ru/  
+    //admitad.com/  
+    //betweendigital.com/  
+    //godaddy.com/  
+    //symcb.com/  
+    //sptmr.ru/  
+    //dumedia.ru/  
+    //demix-sport.com/  
+    //outventure-outdoor.com/  
+    //sportmaster.ru/  
+    //huodongxing.com/  
+    //tianqi.2345.com/  
+    //weather.com.cn/  
+    //tianqi.com/  
+    //docin.com/  
+    //health-100.cn/  
+    //meinian.cn/  
+    //aisino.com/  
+    //alipay.com/  
+    //alimama.com/  
+    //pc6.com/  
+    //6x86.net/  
+    //victorsport.com.cn/  
+    //head-china.com.cn/  
+    //open.taobao.com/  
+    //zara.cn/  
+    //uniqlo.cn/  
+    //gap.cn/  
+    //hm.com/  
+    //canda.cn/  
+    //muji.com.cn/  
+    //ispo.com.cn/  
+    //ispo.com/  
+    //gksm.local/  
+    //sed.app.local/  
+    //lecake.com/  
+    //wsj.com/  
+    //siwuprint.com/  
+    //vista-sk.com/  
+    //kf.qq.com/  
+    //swimmingproducts.com/  
+    //imglicensing.com/  
+    //101.227.143.109/  
+    //ws.sj.qq.com/  
+    //disktool.cn/  
+    //wpscdn.cn/  
+    //e-chinacycle.com/  
+    //ikea.com/  
+    //ikea.cn/  
+    //wenku.baidu.com/  
+    //o-stin.cn/  
+    //anjuke.com/  
+    //fang.com/  
+    //lianjia.com/  
+    //webex.com/  
+    //aisinogz.com/  
+    //96005656.com/  
+    //decathlon.ru/  
+    //taeapp.com/  
+    //bupa.com.cn/  
+    //roguefitness.com/  
+    //guahao.com/  
+    //pdhr.com/  
+    //gtimg.com/  
+    //captcha.guard.qcloud.com/  
+    //topgun.com.tw/  
+    //spinner-usa.com/  
+    //avaya.com/  
+    //bluecoat.com/  
+    //10010.com/  
+    //microsoft.com/  
+    //youdao.com/  
+    //www.shpte.com/  
+    //wechat.o-stin.cn/  
+    //webinputsystem.com/  
+    //1688.com/  
+    //12306.cn/  
+    //wenku.baidu.com/  
+    //ctrip.com/  
+    //qunar.com/  
+    //dhl.com/  
+    //alibaba.com/  
+    //alicdn.com/  
+    //shmet.com/  
+    //100ppi.com/  
+    //skype.com/  
+    //blog.sina.com.cn/  
+    //mail.it-power.cn/  
+    //m2m.10646.cn/  
+    //ymq.ctsports.com.cn/  
+    //51zbz.com/  
+    //docin.com/  
+    //windeln.de/  
+    //fobshanghai.com/  
+    //fur.com.cn/  
+    //61.152.215.248/  
+    //51pptmoban.com/  
+    //100ppi.com/  
+    //21food.cn/  
+    //colormunki.com/  
+    //xrite.com/  
+    //bzxz.net/  
+    //apple.com/  
+    //staples.cn/  
+    //webpowerchina.cn/  
+    //yonyou.com/  
+    //wmcvietnam.com/  
+    //instrument.com.cn/  
+    //xm-l-tax.gov.cn/  
+    //down.usdxz1.net/  
+    //sfscjk.com/  
+    //51recovery.com/  
+    //ey100.com/  
+    //chinaacc.com/  
+    //sportmaster.ru/  
+    //zhikunedu.com/  
+    //ctrip.com/  
+    //ctripbiz.com/  
+    //c-trip.com/  
+    //wooordhunt.ru/  
+    //nipic.com/  
+    //translatewrite.com/  
+    //qualitydigest.com/  
+    //mkt5989.com/  
+    //intertek.com.cn/  
+    //3conline.com/  
+    //kms.lotro.cc/  
+    //sz-fesco.com/  
+    //1tu.com/  
+    //shpte.com/  
+    //mp.weixin.qq.com/  
+    //100ppi.com/  
+    //ldoceonline.com/  
+    //creativehunt.com/  
+    //en.ytsports.cn/  
+    //hbr-russia.ru/  
+    //ckgsb.edu.cn/  
+    //daxueconsulting.com/  
+    //diva-portal.org/  
+    //gfk.com/  
+    //kantar.com/  
+    //87g.com/  
+    //mckinsey.com/  
+    //ukessays.com/  
+    //essencehr.com/  
+    //sithc.com/  
+    //everlaw.com.cn/  
+    //pay.weixin.qq.com/  
+    //knowledge.ckgsb.edu.cn/  
+    //mch.tenpay.com/  
+    //ostin.admin.dhteam.net/  
+    //hsbcnet.com/  
+    //fjkj100.com/  
+    //omtrdc.net/  
+    //rapidbbs.cn/  
+    //58.com/  
+    //nike.com/  
+    //yandex.ru/  
+    //upwork.com/  
+    //1qunwang.com/  
+    //signsandsymptomsoftranslation.com/  
+    //listbb.ru/  
+    //nat-geo.ru/  
+    //scubadiving.com/  
+    //scubaboard.com/  
+    //ostin.cn/  
+    //ostin.com/  
+    //sportmaster.ru/  
+    //sportmastercorp.com/  
+    //sportmaster.com/  
+    //sportmaster.cn/  
+    //icloud.com/  
+    //incake.net/  
+    //captcha.qq.com/  
+    //wx.gtimg.com/  
+    //kf.qq.com/  
+    //pay.weixin.qq.com/  
+    //winshang.com/  
+    //soupu.com/  
+    //1tu.cn/  
+    //sportmaster.ru/  
+    //sportmaster.cn/  
+    //yandex.ru/  
+    //mediatoday.ru/  
+    //admitad.com/  
+    //betweendigital.com/  
+    //godaddy.com/  
+    //symcb.com/  
+    //sptmr.ru/  
+    //dumedia.ru/  
+    //demix-sport.com/  
+    //outventure-outdoor.com/  
+    //sportmaster.ru/  
+    //huodongxing.com/  
+    //tianqi.2345.com/  
+    //weather.com.cn/  
+    //tianqi.com/  
+    //docin.com/  
+    //health-100.cn/  
+    //meinian.cn/  
+    //aisino.com/  
+    //221.239.34.154/  
+    //alipay.com/  
+    //alimama.com/  
+    //pc6.com/  
+    //6x86.net/  
+    //victorsport.com.cn/  
+    //head-china.com.cn/  
+    //open.taobao.com/  
+    //zara.cn/  
+    //mch.weixin.qq.com/  
+    //uniqlo.cn/  
+    //gap.cn/  
+    //hm.com/  
+    //canda.cn/  
+    //muji.com.cn/  
+    //ispo.com.cn/  
+    //ispo.com/  
+    //gksm.local/  
+    //sed.app.local/  
+    //lecake.com/  
+    //wsj.com/  
+    //siwuprint.com/  
+    //vista-sk.com/  
+    //kf.qq.com/  
+    //swimmingproducts.com/  
+    //imglicensing.com/  
+    //ws.sj.qq.com/  
+    //disktool.cn/  
+    //wpscdn.cn/  
+    //e-chinacycle.com/  
+    //ikea.com/  
+    //ikea.cn/  
+    //wenku.baidu.com/  
+    //o-stin.cn/  
+    //anjuke.com/  
+    //fang.com/  
+    //lianjia.com/  
+    //webex.com/  
+    //aisinogz.com/  
+    //96005656.com/  
+    //decathlon.ru/  
+    //taeapp.com/  
+    //bupa.com.cn/  
+    //roguefitness.com/  
+    //guahao.com/  
+    //pdhr.com/  
+    //gtimg.com/  
+    //captcha.guard.qcloud.com/  
+    //topgun.com.tw/  
+    //spinner-usa.com/  
+    //pay.weixin.qq.com/  
+    //myqcloud.com/  
+    //cossh.myqcloud.com/  
+    //adidas.com/  
+    //g5g.cn/  
+    //suncamp.com/  
+    //cnbestbags.com/  
+    //combinepdf.com/  
+    //smallpdf.com/  
+    //agvagroup.com/  
+    //bestcake.com/  
+    //heddels.com/  
+    //cncn.com/  
+    //dmavip.com/  
+    //tax.sh.gov.cn/  
+    //newrunners.ru/  
+    //newrunners.ru/  
+    //fabletics.com/  
+    //yogajournal.com/  
+    //zhe800.com/  
+    //tuanimg.com/  
+    //ganji.com/  
+    //bizcn.com/  
+    //sportmaster-qa.ptcmscloud.com/  
+    //airfrance.com.cn/  
+    //tjzc1.com/  
+    //buildingbeautifulsouls.com/  
+    //edb08.com.cn/  
+    //tuchong.com/  
+    //115.236.188.6/  
+    //santoni.cn/  
+    //shape.com/  
+    //crazy4running.ru/  
+    //kappa.com/  
+    //runrepeat.com/  
+    //easyoga.com/  
+    //fortexsport.com/  
+    //vplaboratory.com/  
+    //beijing2022.cn/  
+    //columbia.com/  
+    //36588.com.cn/  
+    //36588.com/  
+    //wwse2022.com/  
+    //mcake.com/  
+    //fifa.com/  
+    //ilovepdf.com/  
+    //uccbikes.com/  
+    //cronusbike.com/  
+    //ptcmscloud.com/  
+    //jce-jcb.com/  
+    //xidesheng.com/  
+    //onezh.com/  
+    //satelitebikelight.com/  
+    //minkicycle.com/  
+    //globaltextiles.com/  
+    //lintex-apparel.com/  
+    //hx.cn/  
+    //202.104.126.42/  
+    //222.76.242.84/  
+    //180.168.156.9/  
+    category=suppliers 
+end
+
+define category picture_download
+    //58pic.com/  
+end
+
+define category Store_URL
+    //dianping.com/  
+    //nike.com/  
+    //columbiasports.cn/  
+    //dpfile.com/  
+    //imgcache.qq.com/  
+    //captcha.gtimg.com/  
+    //tajs.qq.com/  
+    //tianqihoubao.com/  
+    //nikesku.com/  
+    //adidas.csod.com/  
+end
+
+define category WIFI_SHOPPING
+    //alicdn.com/  
+    //tmall.com/  
+    //taobao.com/  
+    //yhd.com/  
+    //amazon.com/  
+    //amazon.cn/  
+    //jd.com/  
+    //360buyimg.com/  
+    //cntv.wscdns.com/  
+end
+
+define category Speedup
+    //optimizely.com/  
+    //newrelic.com/  
+    //aeroflot.ru/  
+    //kaspersky.com/  
+    //sportmaster.ru/  
+    //sptmr.ru/  
+    //ostin.com/  
+    //scarabresearch.com/  
+    //webinputsystem.com/  
+    //wosign.com/  
+    //wsj.com/  
+    //wikipedia.org/  
+    //viruallyghetto.com/  
+    //vtb.com/  
+    //gtnexus.com/  
+    //ptcmscloud.com/  
+end
+
+define category Allow_Hotline
+    //qq.com/  
+    //tencent.com/  
+    //zdmimg.com/  
+    //webinputsystem.com/  
+end
+
+define category Payment4Store
+    //comodoca4.com/  
+    //gtimg.com/  
+    //pay.weops.qq.com/  
+    //pay.wechat.com/  
+    //weixin.qq.com/  
+    //edgesuite.net/  
+    //akamai.net/  
+    //alipaydns.com/  
+    //alipay.com/  
+    //symcb.com/  
+    //aliloan.com/  
+    //alipay-cloud.com/  
+    //alipayplus.com/  
+    //alipay-eco.com/  
+    //ant-financial.com/  
+    //ant-open.com/  
+    //ant-biz.com/  
+    //antfortune.com/  
+    //antgroup.com/  
+    //antsdaq.com/  
+    //ebuckler.com/  
+    //mayiyunbao.com/  
+    //mybank.cn/  
+    //fund123.cn/  
+    //koubei.com/  
+    //zmxy.com.cn/  
+    //payment.sinopayment.com.cn/  
+    //zmxy.com.cn/  
+    //zhisheng.com/  
+    //alipay.hk/  
+    //antfin.com/  
+    //xin.xin/  
+    //antfin-inc.com/  
+    //ssdata.com/  
+    //ssdata.com/  
+end
+
+define category Tencent
+    //180.163.17.118/  
+    //203.205.147.167/  
+    //112.64.237.239/  
+    //101.226.76.78/  
+    //120.198.203.149/  
+    //219.113.60.173/  
+    //219.133.49.211/  
+    //219.133.48.103/  
+    //111.221.77.161/  
+    //111.161.52.151/  
+    //101.226.114.115/  
+    //180.163.1.102/  
+    //180.163.3.98/  
+    //101.226.111.155/  
+    //weixin.qq.com/  
+    //wx.qq.com/  
+    //idqqimg.com/  
+    //180.153.160.30/  
+    //119.147.45.153/  
+    //119.147.32.235/  
+    //123.151.40.57/  
+    //101.226.111.140/  
+    //64clouds.com/  
+    //qlogo.cn/  
+    //101.226.226.156/  
+    //183.3.229.156/  
+    //183.61.46.183/  
+    //101.226.211.44/  
+    //180.163.17.119/  
+    //101.226.226.246/  
+    //180.163.22.104/  
+    //101.227.151.201/  
+    //ugcbsy.qq.com/  
+    //pan.qun.qq.com/  
+    //gpic.cn/  
+    //gtimg.cn/  
+    //101.226.78.38/  
+    //101.226.226.252/  
+    //101.226.226.216/  
+    //101.226.226.159/  
+    //101.226.226.161/  
+    //101.226.64.98/  
+    //101.226.226.167/  
+    //180.163.17.117/  
+    //180.153.105.157/  
+    //180.60.16.220/  
+    //180.153.160.33/  
+    //119.147.32.236/  
+    //180.153.201.38/  
+    //119.147.32.229/  
+    //119.147.45.157/  
+end
+
+define category "Shopping Content Server"
+    //alicdn.com/  
+    //alipay.com/  
+    //tbcdn.cn/  
+    //apple.com/  
+end
+
+define category BlackList
+    //miaopai.com/  
+    //220.249.245.201/  
+end
+
+define category Translation_policy
+    //youdao.com/  
+    //wanda.cn/  
+end
+
+define category suppliers
+    //ancore-chiou.com/  
+    //eras.com.tw/  
+end
+
+define category TAX
+    //jss.com.cn/  
+    //51fapiao.cn/  
+    //hljgswsbs.gov.cn/  
+    //218.57.142.46/  
+    //106.39.231.100/  
+    //106.39.231.221/  
+end
+
+define condition RequestURLCategory_Restaurants
+    category=Restaurants/Dining/Food 
+end
+
+define condition __USER9
+    realm=windows_sso_realms user=SPORTMASTER\e.zhidelev 
+end
+
+define condition LunchTime
+    time=1100..1500 
+end
+
+define condition Shop_List
+    category=(Common_sites, Shopping, Store_URL, Business/Economy, "Chat (IM)/SMS", "Content Servers", Education, Email, "File Storage/Sharing", "Financial Services", Government/Legal, "Job Search/Careers", News/Media, Newsgroups/Forums, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", "Software Downloads", Technology/Internet, Translation, Travel) 
+end
+
+define condition RequestURLCategory_Auctions_Shopping
+    category=(Fanli, Shopping, Auctions, "Software Downloads") 
+end
+
+define condition __HostPort140
+    url.host.regex="ua-webdav.smua.local" 
+end
+
+define condition Lunch_Time_45Mins
+    category=(Shopping, Art/Culture, Auctions, "Charitable Organizations", "Controlled Substances", E-Card/Invitations, Education, "For Kids", Health, Informational, "Media Sharing", Military, News/Media, Newsgroups/Forums, "Office/Business Applications", Religion, Restaurants/Dining/Food, "Social Networking", "Society/Daily Living", Sports/Recreation, Vehicles, "Web Hosting") 
+end
+
+define condition RequestURLCategory_RmoteDesktop
+    category="Remote Access Tools" 
+end
+
+define condition __USER202
+    realm=windows_sso_realms user=SPORTMASTER\cynthia.qin 
+end
+
+define condition RequestURLCategory_TV_FileStorage
+    category=("Blocked URL", "Audio/Video Clips", "Child Pornography", "File Storage/Sharing", Gambling, Phishing, Pornography, "Sex Education", "Sexual Expression", Suspicious, "TV/Video Streams") 
+end
+
+define condition RequestURLCategory_Block_website
+    category=Block_websites 
+end
+
+define condition SHOPPING_FILESHARE
+    category=(WIFI_SHOPPING, Auctions, "Child Pornography", Entertainment, "File Storage/Sharing", Gambling, Games, Phishing, Pornography, "Remote Access Tools", Scam/Questionable/Illegal, "Sex Education", "Sexual Expression", Spam, "TV/Video Streams") 
+end
+
+define condition Working_Time
+    time=0900..1800 
+end
+
+define condition __HostPort91_FORWARD_
+    server_url.port=80 server_url.host=sportmaster.cn 
+end
+
+define condition RequestURLCategory_Remotes_desktop
+    category=(BlackList, "Remote Access Tools") 
+end
+
+define condition "Daily Work"
+    category=(Common_sites, Brokerage/Trading, Business/Economy, "Content Servers", Education, Email, "Financial Services", Government/Legal, News/Media, Non-Viewable/Infrastructure, Reference, "Search Engines/Portals", Technology/Internet, Translation, Travel) 
+end
+
+define condition RequestURLCategory_RealEstate
+    category="Real Estate" 
+end
+
+define condition RequestURLCategory_FileStorage
+    category="File Storage/Sharing" 
+end
+
+define condition _user_is_unknown
+    variable.user_authentication_is_on=false 
+    user.is_guest=yes 
+end
+
+define condition AfterWork
+    time=1830..2359 
+end
+
+define condition __HostPort140_FORWARD_
+    server_url.host.regex="ua-webdav.smua.local" 
+end
+
+define condition ServerURLCategory_Speedup
+    server_url.category=Speedup 
+end
+
+define condition __USER3
+    realm=windows_sso_realms user=SPORTMASTER\Leon.li 
+end
+
+define condition SILENT_USERS
+    user="NT AUTHORITY\ANONYMOUS LOGON" 
+    user="Anonymous logon" 
+    user="NT AUTHORITY\Anonymous logon" 
+end
+
+define condition __USER47
+    realm=windows_sso_realms user=SPORTMASTER\jia.yang 
+end
+
+define state map boolean weekly_guest_volume_quota_warning_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map boolean daily_guest_volume_quota_warning_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map boolean hourly_guest_volume_quota_warning_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map boolean weekly_user_volume_quota_warning_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map boolean daily_user_volume_quota_warning_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map boolean hourly_user_volume_quota_warning_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map integer64 weekly_guest_volume_quota{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map integer64 daily_guest_volume_quota{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map integer64 hourly_guest_volume_quota{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map integer64 weekly_user_volume_quota{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map integer64 daily_user_volume_quota{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map integer64 hourly_user_volume_quota{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map boolean time_guest_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=60
+  storage=memory
+end define
+
+define state map boolean time_user_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=60
+  storage=memory
+end define
+
+define state map boolean weekly_guest_time_quota_warning_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map boolean daily_guest_time_quota_warning_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map boolean hourly_guest_time_quota_warning_record{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map boolean weekly_user_time_quota_warning_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map boolean daily_user_time_quota_warning_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map boolean hourly_user_time_quota_warning_record{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map integer64 weekly_guest_time_quota{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map integer64 daily_guest_time_quota{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map integer64 hourly_guest_time_quota{ip_address:client.address}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map integer64 weekly_user_time_quota{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=week
+  storage=memory
+end define
+
+define state map integer64 daily_user_time_quota{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=day
+  storage=memory
+end define
+
+define state map integer64 hourly_user_time_quota{ascii_string:user}{ascii_string}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
+define state map integer dashboard_blocked_stats_monthly{ascii_string:url.host}{ascii_string:exception.id}
+  size=1000000
+  ttl=month
+  storage=memory
+end define
+
+define state map integer dashboard_blocked_stats_daily{ascii_string:url.host}{ascii_string:exception.id}
+  size=100000
+  ttl=day
+  storage=memory
+end define
+
+define state map integer64 dashboard_blocked_stats_infinity{ascii_string:exception.id}
+  size=200
+  ttl=infinity
+  storage=memory
+end define
+
+define state map integer dashboard_blocked_stats_hourly{ascii_string:url.host}{ascii_string:exception.id}
+  size=10000
+  ttl=hour
+  storage=memory
+end define
+
